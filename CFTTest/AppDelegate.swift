@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  CFTTest
 //
-//  Created by Александр Лебедько on 05/12/2018.
+//  Created by Денис Лебедько on 05/12/2018.
 //  Copyright © 2018 Денис Лебедько. All rights reserved.
 //
 
@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window = AppWindow.window        
         return true
     }
 

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageProcessingVC" customModule="CFTTest" customModuleProvider="target">
+            <connections>
+                <outlet property="chooseImageButton" destination="Y1b-vW-mwe" id="4LE-Jl-GdR"/>
+                <outlet property="imageView" destination="BGY-7Z-JUs" id="W58-7P-Nrg"/>
+                <outlet property="invertColorsButton" destination="5r6-87-4OH" id="ven-ed-oJC"/>
+                <outlet property="mirrorImageButton" destination="Fe0-Ui-HcS" id="3o8-Dc-zDj"/>
+                <outlet property="rotateButton" destination="mx0-n4-uaz" id="hcd-cY-rnN"/>
+                <outlet property="tableView" destination="RBH-by-tHu" id="MMY-Bl-LF2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uj2-je-atg" userLabel="Main View">
+                    <rect key="frame" x="16" y="36" width="343" height="171.5"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1b-vW-mwe">
+                            <rect key="frame" x="0.0" y="0.0" width="171.5" height="171.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Select image"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="chooseImage:" destination="-1" eventType="touchUpInside" id="UsN-Wk-KRb"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testImage" translatesAutoresizingMaskIntoConstraints="NO" id="BGY-7Z-JUs">
+                            <rect key="frame" x="0.0" y="0.0" width="171.5" height="171.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="BGY-7Z-JUs" secondAttribute="height" multiplier="1:1" id="Iaj-eK-kF6"/>
+                                <constraint firstAttribute="height" priority="900" constant="200" id="aL3-dE-f4z"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RRL-Iy-ixg" userLabel="Buttons View">
+                            <rect key="frame" x="171.5" y="0.0" width="171.5" height="171.5"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mx0-n4-uaz" customClass="RoundedButton" customModule="CFTTest" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="16" width="139.5" height="30"/>
+                                    <color key="backgroundColor" red="0.099681652869049509" green="0.17628272399073475" blue="1" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="WP6-fi-erZ"/>
+                                    </constraints>
+                                    <state key="normal" title="Rotate">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableRounding" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="rotate" destination="-1" eventType="touchUpInside" id="pD3-FH-OmU"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fe0-Ui-HcS" customClass="RoundedButton" customModule="CFTTest" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="125.5" width="139.5" height="30"/>
+                                    <color key="backgroundColor" red="0.099681652869999998" green="0.176282724" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="zbP-xL-Mwb"/>
+                                    </constraints>
+                                    <state key="normal" title="Mirror image">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableRounding" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="mirrorImage" destination="-1" eventType="touchUpInside" id="NsX-pm-nCE"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5r6-87-4OH" customClass="RoundedButton" customModule="CFTTest" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="71" width="139.5" height="30"/>
+                                    <color key="backgroundColor" red="0.099681652869999998" green="0.176282724" blue="1" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="7NK-bA-BBM"/>
+                                    </constraints>
+                                    <state key="normal" title="Invert colors">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableRounding" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="invertColors" destination="-1" eventType="touchUpInside" id="lMT-TZ-PGB"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="5r6-87-4OH" firstAttribute="centerY" secondItem="RRL-Iy-ixg" secondAttribute="centerY" id="3br-K3-xfC"/>
+                                <constraint firstItem="mx0-n4-uaz" firstAttribute="leading" secondItem="RRL-Iy-ixg" secondAttribute="leading" constant="16" id="Hee-GG-dbo"/>
+                                <constraint firstItem="mx0-n4-uaz" firstAttribute="top" secondItem="RRL-Iy-ixg" secondAttribute="top" constant="16" id="Q8M-IG-o47"/>
+                                <constraint firstAttribute="width" priority="900" constant="200" id="Usv-fg-ADm"/>
+                                <constraint firstAttribute="trailing" secondItem="mx0-n4-uaz" secondAttribute="trailing" constant="16" id="asq-uU-B5x"/>
+                                <constraint firstItem="5r6-87-4OH" firstAttribute="centerX" secondItem="mx0-n4-uaz" secondAttribute="centerX" id="cRk-xo-FlX"/>
+                                <constraint firstAttribute="bottom" secondItem="Fe0-Ui-HcS" secondAttribute="bottom" constant="16" id="kOQ-w9-yNu"/>
+                                <constraint firstItem="Fe0-Ui-HcS" firstAttribute="centerX" secondItem="mx0-n4-uaz" secondAttribute="centerX" id="tKt-xl-MQ3"/>
+                                <constraint firstItem="Fe0-Ui-HcS" firstAttribute="width" secondItem="mx0-n4-uaz" secondAttribute="width" id="uUA-pw-x1L"/>
+                                <constraint firstItem="5r6-87-4OH" firstAttribute="width" secondItem="mx0-n4-uaz" secondAttribute="width" id="zAi-RF-3aU"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Y1b-vW-mwe" firstAttribute="height" secondItem="BGY-7Z-JUs" secondAttribute="height" id="8Ad-Zw-vBM"/>
+                        <constraint firstItem="BGY-7Z-JUs" firstAttribute="centerY" secondItem="uj2-je-atg" secondAttribute="centerY" id="96W-ms-aBZ"/>
+                        <constraint firstItem="Y1b-vW-mwe" firstAttribute="centerY" secondItem="BGY-7Z-JUs" secondAttribute="centerY" id="Btj-pb-5Ac"/>
+                        <constraint firstItem="RRL-Iy-ixg" firstAttribute="centerY" secondItem="uj2-je-atg" secondAttribute="centerY" id="FmF-RW-ifF"/>
+                        <constraint firstAttribute="width" priority="900" constant="400" id="HEk-yG-Eg5"/>
+                        <constraint firstItem="Y1b-vW-mwe" firstAttribute="width" secondItem="BGY-7Z-JUs" secondAttribute="width" id="WJD-q7-wsS"/>
+                        <constraint firstItem="BGY-7Z-JUs" firstAttribute="leading" secondItem="uj2-je-atg" secondAttribute="leading" id="gQL-QU-3h2"/>
+                        <constraint firstItem="RRL-Iy-ixg" firstAttribute="width" secondItem="uj2-je-atg" secondAttribute="width" multiplier="1:2" id="kYr-av-WbU"/>
+                        <constraint firstItem="BGY-7Z-JUs" firstAttribute="width" secondItem="uj2-je-atg" secondAttribute="width" multiplier="1:2" id="kx4-oN-EXD"/>
+                        <constraint firstItem="Y1b-vW-mwe" firstAttribute="centerX" secondItem="BGY-7Z-JUs" secondAttribute="centerX" id="lCm-sm-V0i"/>
+                        <constraint firstAttribute="trailing" secondItem="RRL-Iy-ixg" secondAttribute="trailing" id="oVt-dU-mW4"/>
+                        <constraint firstItem="RRL-Iy-ixg" firstAttribute="height" secondItem="uj2-je-atg" secondAttribute="height" id="oek-7x-T7A"/>
+                        <constraint firstItem="BGY-7Z-JUs" firstAttribute="height" secondItem="uj2-je-atg" secondAttribute="height" id="zCe-8O-wV8"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RBH-by-tHu">
+                    <rect key="frame" x="16" y="247.5" width="343" height="435.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="RBH-by-tHu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="BVw-a9-YIc"/>
+                <constraint firstItem="uj2-je-atg" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="E9l-Gh-GSr"/>
+                <constraint firstItem="uj2-je-atg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="IZu-p3-akr"/>
+                <constraint firstAttribute="trailing" secondItem="RBH-by-tHu" secondAttribute="trailing" constant="16" id="KEi-9F-SNZ"/>
+                <constraint firstItem="RBH-by-tHu" firstAttribute="top" secondItem="uj2-je-atg" secondAttribute="bottom" constant="40" id="hVz-fp-cFa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uj2-je-atg" secondAttribute="trailing" constant="16" id="pGV-Bn-JdD"/>
+                <constraint firstItem="RBH-by-tHu" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" constant="16" id="sLV-MT-TqM"/>
+                <constraint firstItem="uj2-je-atg" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="yrJ-Zh-KWS"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="testImage" width="221" height="228"/>
+    </resources>
+</document>

@@ -1,0 +1,27 @@
+//
+//  Localizable.strings
+//  CFTTest
+//
+//  Created by Денис Лебедько on 10/12/2018.
+//  Copyright © 2018 Денис Лебедько. All rights reserved.
+//
+
+//Global
+"cancel" = "Cancel";
+"ok" = "OK";
+
+"selectImageSourceAlert.title" = "Select image source";
+"selectImageSourceAlert.action.camera" = "Camera";
+"selectImageSourceAlert.action.photoLibrary" = "Photo Library";
+
+"selectActionAlert.title" = "Select action";
+"selectActionAlert.action.addToLibrary" = "Add to library";
+"selectActionAlert.action.deleteImage" = "Delete image";
+"selectActionAlert.action.useAsSource" = "Use as source";
+
+"error.openCameraAlert.title" = "Warning";
+"error.openCameraAlert.message" = "You don't have camera";
+
+"saveImageAlert.error.title" = "Save error";
+"saveImageAlert.success.title" = "Saved!";
+"saveImageAlert.success.message" = "Your image has been saved to your photos.";
