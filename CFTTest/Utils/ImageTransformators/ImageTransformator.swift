@@ -8,7 +8,6 @@
 
 import UIKit
 
-let imageProcessingQueueName: String = "image_processing_queue"
 let asyncImageOperationDuration: Float = 0.1
 
 class AsyncImageOperation: Operation {
@@ -26,15 +25,10 @@ class ImageTransformator {
     init() {
         id = NSUUID().uuidString
         queue.maxConcurrentOperationCount = 1
-        queue.qualityOfService = .utility
+        queue.qualityOfService = .background
     }
     
     func waitForAsyncOperation(progressBlock: @escaping (Float) -> Void, completionBlock: @escaping () -> Void) {
-        let processingQueue = DispatchQueue(label: imageProcessingQueueName, qos: .background)
-
-        processingQueue.async { [weak self] in
-            guard let `self` = self else { return }
-        
             let loadingTime = Float(arc4random_uniform(25) + 5)
             
             let operationsCount = Int(loadingTime/asyncImageOperationDuration)
@@ -62,8 +56,7 @@ class ImageTransformator {
                 operations.append(operation)
             }
             
-            self.queue.addOperations(operations, waitUntilFinished: true)
-        }
+            self.queue.addOperations(operations, waitUntilFinished: false)
     }
     
     func transform(_ image: UIImage, progressBlock: @escaping (Float) -> Void, completionBlock: @escaping (UIImage) -> Void) {
